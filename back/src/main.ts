@@ -13,7 +13,7 @@ const indexRoute = require('../routes/indexRoute');
 const pokemonRoute = require('../routes/pokemon');
 
 //connect Db
-mongoose.connect("mongodb://localhost:27017/mongoDB", { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false});
+mongoose.connect("mongodb://localhost:27017/mongoDB", { useNewUrlParser: true,useCreateIndex: true, useUnifiedTopology: true, useFindAndModify: false});
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function () { console.log('Connect db success Local db'); });

@@ -1,9 +1,16 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 const PokemonSchema = new Schema({
-  id: { type: Number },
+  id: { type: Number,required: true, unique: true},
   name: { type: String },
-  typeList: { type: Buffer},
-});
+  types: { type: Array },
+  height: { type: String },
+  weight: { type: String },
+  sprite: { type: String },
+  description: { type: String },
+  image: { type: String },
+  multipliers: { type: Array },
+  weaknesses: { type: Array },
 
+});
 module.exports = mongoose.model("Pokemon", PokemonSchema);

@@ -31,7 +31,6 @@
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "http-errors": "^1.8.0",
-    "json-pokemon": "^1.0.0",
     "mongoose": "^5.10.8"
   },
   "author": "",
