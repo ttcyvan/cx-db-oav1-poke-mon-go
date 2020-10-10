@@ -1,9 +1,7 @@
 From node:12
-EXPOSE 3800
+EXPOSE 3001
 COPY package.json ./
-COPY . ./ 
-RUN ls -a 
-RUN npm install
+COPY src ./src 
+COPY public ./public 
 RUN yarn install
-RUN yarn build
 RUN yarn start
