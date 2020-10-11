@@ -1,5 +1,7 @@
 import React, { Component } from "react";
+import '../allstyle.css';
 import {
+  Container,
   Card,
   CardImg,
   CardText,
@@ -7,6 +9,8 @@ import {
   CardTitle,
   CardSubtitle,
   Button,
+  Row,
+  Col
 } from "reactstrap";
 import { Link } from "react-router-dom";
 
@@ -29,31 +33,30 @@ class BodyContainer extends Component {
   render() {
       console.log(this.state.data)
     return (
-      <div>
-        <hr className="my-4" />
+      <div id="menu-outer">
+        <hr className="my-6" />
+        <Container className="themed-container" fluid="lg">
+        <Row  className="table"> 
         {this.state.data.map((allpokemon)=>
-        <div key={allpokemon.id}> 
-            <Card >
+          <Col  key={allpokemon.id} md={4} id="horizontal-list">
+            <Card className="stylecard">
+                <CardImg
+                top
+                width="100%"
+                src={allpokemon.sprite}
+                alt="Card image cap"
+                />
+                <CardBody>
+                <CardTitle className="gras">{allpokemon.name}</CardTitle>
+                <CardSubtitle className="grastaille">Taille: {allpokemon.height}</CardSubtitle>
                 
-            <CardImg
-            top
-            width="100%"
-            src={allpokemon.sprite}
-            alt="Card image cap"
-            />
-
-            <CardBody>
-            <CardTitle>{allpokemon.name}</CardTitle>
-            <CardSubtitle>Taille: {allpokemon.height}</CardSubtitle>
-            <CardText>
-                {allpokemon.description}
-            </CardText>
-            <a href ={`/${allpokemon.name}`}><Button>Details</Button></a>
-            </CardBody>
-        </Card>
-       </div>
-        
+                <a href ={`/${allpokemon.name}`}><Button>Details</Button></a>
+                </CardBody>
+            </Card>
+          </Col>
         )}
+         </Row>
+         </Container>
         
       </div>
     );

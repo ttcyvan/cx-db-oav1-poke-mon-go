@@ -1,0 +1,32 @@
+#menu-outer {
+	height: 84px;
+}
+
+.table {
+	display: table;  
+	margin-top: 30px;
+}
+
+.gras{
+	font-size: 30px;
+	font-weight: bold;
+}
+.stylecard{
+	margin-top: 20px;
+}
+
+.grastaille{
+	font-size: 15px;
+	font-weight: bold;
+	color: red;
+}
+
+ul#horizontal-list {
+	min-width: 696px;
+	list-style: none;
+	padding-top: 20px;
+}
+
+ul#horizontal-list li {
+		display: inline;
+}
