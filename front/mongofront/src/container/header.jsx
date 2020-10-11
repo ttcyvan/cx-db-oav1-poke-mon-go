@@ -1,5 +1,5 @@
 import React,{Component} from "react";
-import { Container, Jumbotron } from 'reactstrap';
+import { Container, Jumbotron,CardHeader } from 'reactstrap';
 import {Link} from 'react-router-dom'
 
 class Header extends Component{
@@ -8,7 +8,7 @@ class Header extends Component{
         <div>
           <Jumbotron fluid>
             <Container fluid>
-              <h5 className="display-3">POKEDEX</h5>
+            <CardHeader tag="h3">POKEDEX</CardHeader>
             </Container>
           </Jumbotron>
         </div>

@@ -13,12 +13,18 @@ import { Link } from "react-router-dom";
 class Datapokemon extends Component {
   constructor(props) {
     super(props);
-
     this.state = {
       data: [],
-      
     };
   }
+
+   deletePokemon(name:any){
+    fetch(`http://localhost:4242/pokemons/${name}`)
+    .then(response => response.json())
+    .then(result => {
+      console.log('result:', result)
+    }).catch(e => console.error(e));
+}
 
   componentDidMount() {
     let tab = []
@@ -55,6 +61,7 @@ class Datapokemon extends Component {
             <CardText>
                 {allpokemon.description}
             </CardText>
+            <a href ={`/`} onClick={()=>this.deletePokemon(allpokemon.name)}><Button>Supprimer</Button></a>
             </CardBody>
         </Card>
        </div>
